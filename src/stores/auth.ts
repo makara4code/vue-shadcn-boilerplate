@@ -20,7 +20,13 @@ export const useAuthStore = defineStore('auth', {
       try {
         this.isLoading = true;
         this.error = "";
-        const res = await api.post('/auth/login', unref(credentials));
+
+        const { email, password} = unref(credentials);
+
+        const res = await api.post('/pocketbase/api/admins/auth-with-password', {
+          identity: email,
+          password: password
+        });
 
         if (res?.data?.token) {
           this.user = res.data;
