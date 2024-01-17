@@ -7,11 +7,12 @@ import { SearchIcon } from "lucide-vue-next";
 import { type NavItem, navConfig } from "@/config/globalSearch";
 import { useMagicKeys, useToggle, useDark } from "@vueuse/core";
 
-import File from "~icons/radix-icons/file";
 import Logo from "@/components/Logo.vue";
+import router from "@/router";
+
+import File from "~icons/radix-icons/file";
 import RadixIconsMoon from "~icons/radix-icons/moon";
 import RadixIconsSun from "~icons/radix-icons/sun";
-import router from "@/router";
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
@@ -22,7 +23,6 @@ const { Meta_K, Ctrl_K } = useMagicKeys({
   passive: false,
   onEventFired(e) {
     if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
-      console.log("Event fired");
       e.preventDefault();
     }
   },

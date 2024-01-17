@@ -7,6 +7,8 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    Alert: typeof import('./src/components/ui/alert/Alert.vue')['default']
+    AlertDescription: typeof import('./src/components/ui/alert/AlertDescription.vue')['default']
     AlertDialog: typeof import('./src/components/ui/alert-dialog/AlertDialog.vue')['default']
     AlertDialogAction: typeof import('./src/components/ui/alert-dialog/AlertDialogAction.vue')['default']
     AlertDialogCancel: typeof import('./src/components/ui/alert-dialog/AlertDialogCancel.vue')['default']
@@ -16,6 +18,7 @@ declare module 'vue' {
     AlertDialogHeader: typeof import('./src/components/ui/alert-dialog/AlertDialogHeader.vue')['default']
     AlertDialogTitle: typeof import('./src/components/ui/alert-dialog/AlertDialogTitle.vue')['default']
     AlertDialogTrigger: typeof import('./src/components/ui/alert-dialog/AlertDialogTrigger.vue')['default']
+    AlertTitle: typeof import('./src/components/ui/alert/AlertTitle.vue')['default']
     Button: typeof import('./src/components/ui/button/Button.vue')['default']
     Command: typeof import('./src/components/ui/command/Command.vue')['default']
     CommandDialog: typeof import('./src/components/ui/command/CommandDialog.vue')['default']
@@ -34,12 +37,6 @@ declare module 'vue' {
     DialogHeader: typeof import('./src/components/ui/dialog/DialogHeader.vue')['default']
     DialogTitle: typeof import('./src/components/ui/dialog/DialogTitle.vue')['default']
     DialogTrigger: typeof import('./src/components/ui/dialog/DialogTrigger.vue')['default']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
-    IconCommunity: typeof import('./src/components/icons/IconCommunity.vue')['default']
-    IconDocumentation: typeof import('./src/components/icons/IconDocumentation.vue')['default']
-    IconEcosystem: typeof import('./src/components/icons/IconEcosystem.vue')['default']
-    IconSupport: typeof import('./src/components/icons/IconSupport.vue')['default']
-    IconTooling: typeof import('./src/components/icons/IconTooling.vue')['default']
     Input: typeof import('./src/components/ui/input/Input.vue')['default']
     Kbd: typeof import('./src/components/Kbd.vue')['default']
     Label: typeof import('./src/components/ui/label/Label.vue')['default']
@@ -60,8 +57,6 @@ declare module 'vue' {
     SheetHeader: typeof import('./src/components/ui/sheet/SheetHeader.vue')['default']
     SheetTitle: typeof import('./src/components/ui/sheet/SheetTitle.vue')['default']
     SheetTrigger: typeof import('./src/components/ui/sheet/SheetTrigger.vue')['default']
-    TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
     UserAuthForm: typeof import('./src/components/auth/UserAuthForm.vue')['default']
-    WelcomeItem: typeof import('./src/components/WelcomeItem.vue')['default']
   }
 }
