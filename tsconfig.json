@@ -1,13 +1,46 @@
 {
-  "extends": "@directus/tsconfig/vue3",
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
   "compilerOptions": {
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowUnusedLabels": false,
+    "allowUnreachableCode": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "checkJs": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "module": "ES2022",
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
     "verbatimModuleSyntax": false,
     "exactOptionalPropertyTypes": false,
     "noPropertyAccessFromIndexSignature": false,
     "baseUrl": ".",
+    "types": [
+      "unplugin-icons/types/vue",
+    ],
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+
   },
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"]
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
+  "exclude": [
+    "**/dist",
+    "**/node_modules",
+    "**/test",
+    "**/examples",
+    "dist"
+  ]
 }
