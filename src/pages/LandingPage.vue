@@ -4,6 +4,6 @@ import { MainLayout } from '@/layouts';
 </script>
 <template>
   <MainLayout>
-    <h1>Test Update Preview</h1>
+    <h1>Update Development Deploy</h1>
   </MainLayout>
 </template>
