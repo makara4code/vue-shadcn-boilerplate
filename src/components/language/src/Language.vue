@@ -32,7 +32,7 @@ const changeLanguage = (lang: string) => {
 <template>
   <DropdownMenu>
     <DropdownMenuTrigger>
-      <Button class="flex items-center justify-center" aria-label="Toggle dark mode" :variant="'ghost'" :size="'icon'">
+      <Button class="flex items-center justify-center" aria-label="Toggle dark mode" variant="'ghost'" :size="'icon'">
         <img class="w-[30px] h-[30px]" :src="languageList[language].icon" alt="Vue logo" />
       </Button>
     </DropdownMenuTrigger>
