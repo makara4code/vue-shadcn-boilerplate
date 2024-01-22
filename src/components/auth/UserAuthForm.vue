@@ -3,7 +3,7 @@ import { ref, computed, unref, onUnmounted } from 'vue';
 import { Label } from '@/components/ui/label';
 import { Input } from "@/components/ui/input";
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { useAuthStore } from '@/stores/auth';
+import { useAuthStore } from '@/stores/modules/auth';
 
 import LucideSpinner from '~icons/lucide/loader-2';
 import router from '@/router';
