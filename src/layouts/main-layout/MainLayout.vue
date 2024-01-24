@@ -101,7 +101,7 @@ function handleSelectLink(item: NavItem) {
             </Button>
             <LanguageSwitcher />
 
-            <Button class="p-4" :variant="'outline'" @click="router.push('sign-in')">
+            <Button class="p-4" :variant="'outline'" @click="router.push('login')">
               <p class="text-slate-500 font-semibold">{{ t('common.login') }}</p>
             </Button>
           </div>

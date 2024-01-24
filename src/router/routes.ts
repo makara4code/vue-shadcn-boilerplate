@@ -3,7 +3,7 @@ import type { RouteRecordRaw } from "vue-router";
 export const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    component: () => import("@/pages/LandingPage.vue"),
+    component: () => import("@/pages/www/index.vue"),
   },
   {
     path: "/",
@@ -24,11 +24,11 @@ export const routes: Array<RouteRecordRaw> = [
     component: () => import("@/layouts/auth-layout/AuthLayout.vue"),
     children: [
       {
-        path: "/sign-in",
-        name: "sign-in",
-        component: () => import("@/pages/app/authentication/SignIn.vue"),
+        path: "/login",
+        name: "login",
+        component: () => import("@/pages/app/login/Login.vue"),
         meta: {
-          pageTitle: "Sign In",
+          pageTitle: "Login",
         },
       },
     ],

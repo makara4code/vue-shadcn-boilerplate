@@ -16,7 +16,7 @@ router.beforeEach((to, _, next) => {
         if (authStore.isAuthenticated) {
             next();
         } else {
-            next({ name: "sign-in" });
+            next({ name: "login" });
         }
     } else {
         next();

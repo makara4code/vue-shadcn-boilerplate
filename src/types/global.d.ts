@@ -78,3 +78,15 @@ type ObjToKeyValUnion<T> = {
 type ObjToKeyValArray<T> = {
   [K in keyof T]: [K, T[K]];
 }[keyof T];
+
+
+declare type AxiosContentType =
+| 'application/json'
+| 'application/x-www-form-urlencoded'
+| 'multipart/form-data'
+| 'text/plain'
+
+declare interface IResponse<T = any> {
+  code: number
+  data: T extends any ? T : T & any
+}

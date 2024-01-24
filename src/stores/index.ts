@@ -2,7 +2,8 @@ import { createPinia } from "pinia";
 import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
 
 // pinia persist
-const pinia = createPinia();
-pinia.use(piniaPluginPersistedstate);
+const store = createPinia();
+store.use(piniaPluginPersistedstate);
 
-export default pinia;
+export { store }
+export default store;

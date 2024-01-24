@@ -1,18 +1,17 @@
 <script setup lang="ts">
 import { ref, computed, unref, onUnmounted } from 'vue';
-import { Label } from '@/components/ui/label';
-import { Input } from "@/components/ui/input";
-import { Alert, AlertDescription } from "@/components/ui/alert"
-import { useAuthStore } from '@/stores/modules/auth';
+import { Label, Input, Alert, AlertDescription } from "@/components/ui";
+import { useUserStore } from '@/stores/modules';
 
 import LucideSpinner from '~icons/lucide/loader-2';
 import router from '@/router';
 
-const authStore = useAuthStore();
+const userStore = useUserStore();
 
 const isLoading = ref();
 const email = ref("");
 const password = ref("");
+const remember = ref(userStore.rememberMe);
 
 const notHaveEmailOrPassword = computed(() => !unref(email) || !unref(password));
 

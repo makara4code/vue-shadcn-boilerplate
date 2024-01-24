@@ -1,14 +1,17 @@
 import * as path from 'path';
 
+import { createProxy } from './build/proxy';
+import { loadEnv, type ConfigEnv, type UserConfig } from 'vite';
+import { wrapperEnv } from './build/getEnv';
+import { viteMockServe } from "vite-plugin-mock";
+
 import Components from 'unplugin-vue-components/vite';
+import dayjs from 'dayjs';
 import Icons from 'unplugin-icons/vite';
 import IconsResolver from 'unplugin-icons/resolver';
-import Vue from '@vitejs/plugin-vue';
-import { createProxy } from './build/proxy';
-import dayjs from 'dayjs';
-import { loadEnv } from 'vite';
 import pkg from './package.json';
-import { wrapperEnv } from './build/getEnv';
+import Vue from '@vitejs/plugin-vue';
+
 
 const { dependencies, devDependencies, name, version } = pkg;
 
@@ -17,7 +20,7 @@ const __APP_INFO__ = {
   lastBuildTime: dayjs().format('DD-MM-YYYY HH:mm:ss'),
 };
 
-export default ({ mode }) => {
+export default ({ mode }: ConfigEnv): UserConfig => {
   const root = process.cwd();
   const env = loadEnv(mode, root);
   const viteEnv = wrapperEnv(env);
@@ -49,6 +52,13 @@ export default ({ mode }) => {
         compiler: 'vue3',
         autoInstall: true,
       }),
+
+      viteMockServe({
+        ignore: /^\_/,
+        mockPath: 'mock',
+        enable: true,
+        watchFiles: true,
+      }),
     ],
     server: {
       host: '0.0.0.0',
@@ -65,7 +75,7 @@ export default ({ mode }) => {
       minify: 'esbuild',
       reportCompressedSize: false,
       chunkSizeWarningLimit: 2000,
-      rollupVersion: {
+      rollupOptions: {
         output: {
           chunkFileNames: 'assets/js/[name]-[hash].js',
           entryFileNames: 'assets/js/[name]-[hash].js',

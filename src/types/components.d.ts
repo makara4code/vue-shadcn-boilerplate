@@ -8,7 +8,6 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Alert: typeof import('./src/components/ui/alert/Alert.vue')['default']
-    AlertConfirm: typeof import('./src/components/alert/AlertConfirm.vue')['default']
     AlertDescription: typeof import('./src/components/ui/alert/AlertDescription.vue')['default']
     AlertDialog: typeof import('./src/components/ui/alert-dialog/AlertDialog.vue')['default']
     AlertDialogAction: typeof import('./src/components/ui/alert-dialog/AlertDialogAction.vue')['default']
@@ -56,7 +55,7 @@ declare module 'vue' {
     Input: typeof import('./src/components/ui/input/Input.vue')['default']
     Kbd: typeof import('./src/components/Kbd.vue')['default']
     Label: typeof import('./src/components/ui/label/Label.vue')['default']
-    Language: typeof import('./src/components/language/Language.vue')['default']
+    Language: typeof import('./src/components/language/src/Language.vue')['default']
     Logo: typeof import('./src/components/Logo.vue')['default']
     MobileNav: typeof import('./src/components/MobileNav.vue')['default']
     PageHeader: typeof import('./src/components/page-header/PageHeader.vue')['default']
