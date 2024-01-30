@@ -17,24 +17,12 @@ const notHaveEmailOrPassword = computed(() => !unref(email) || !unref(password))
 
 const onSubmit = async (event: Event) => {
   event.preventDefault();
-
-  isLoading.value = true;
-  await authStore.login({ email: unref(email), password: unref(password) });
-  isLoading.value = false;
-
-  if (authStore.isAuthenticated) {
-    router.push({ path: "/dashboard" });
-  }
 };
 
-onUnmounted(() => authStore.error = "");
 </script>
 
 <template>
   <div class="cn('grid gap-6', $attrs.class ?? '')">
-    <Alert variant="destructive" class="mb-4" v-if="authStore.error">
-      <AlertDescription > {{ authStore.error }} </AlertDescription>
-    </Alert>
     <form @submit="onSubmit">
       <div class="grid gap-2">
         <div class="grid gap-2">
@@ -58,6 +46,7 @@ onUnmounted(() => authStore.error = "");
             auto-capitalize="none"
             auto-correct="off"
             :disabled="isLoading"
+            suggested="password"
           />
 
           <Button :disabled="isLoading || notHaveEmailOrPassword" class="mt-4">

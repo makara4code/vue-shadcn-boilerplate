@@ -1,22 +1,27 @@
 <script setup lang="ts">
-import { Command, CommandEmpty, CommandInput } from '@/components/ui/command';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
-import { DialogDescription, VisuallyHidden } from 'radix-vue';
-import { ref, watch } from 'vue';
-import { SearchIcon } from 'lucide-vue-next';
-import { type NavItem, navConfig } from '@/config/globalSearch';
-import { useMagicKeys, useToggle, useDark } from '@vueuse/core';
-import { LanguageSwitcher } from '@/components';
-import { useI18n } from 'vue-i18n';
-import Logo from '@/components/Logo.vue';
 import router from '@/router';
+import Logo from '@/components/Logo.vue';
+import { useMagicKeys, useToggle, useDark } from '@vueuse/core';
+import { useI18n } from 'vue-i18n';
+import { type NavItem, navConfig } from '@/config/globalSearch';
+import { SearchIcon } from 'lucide-vue-next';
+import { ref, watch } from 'vue';
+import { LanguageSwitcher } from '@/components';
+import { DialogDescription, VisuallyHidden } from 'radix-vue';
+import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Command, CommandEmpty, CommandInput } from '@/components/ui/command';
 
 import File from '~icons/radix-icons/file';
 import RadixIconsMoon from '~icons/radix-icons/moon';
 import RadixIconsSun from '~icons/radix-icons/sun';
 
-const isDark = useDark();
+const isDark = useDark({
+  valueDark: 'dark',
+  valueLight: 'light',
+});
+
 const toggleDark = useToggle(isDark);
+
 const { t } = useI18n();
 const isOpen = ref(false);
 
@@ -100,8 +105,7 @@ function handleSelectLink(item: NavItem) {
               <component :is="isDark ? RadixIconsSun : RadixIconsMoon" class="w-[20px] h-[20px] text-foreground" />
             </Button>
             <LanguageSwitcher />
-
-            <Button class="p-4" :variant="'outline'" @click="router.push('login')">
+            <Button class="p-4" :variant="'outline'" @click="router.push('login')" v-if="$route.path !== '/login'">
               <p class="text-slate-500 font-semibold">{{ t('common.login') }}</p>
             </Button>
           </div>
@@ -111,7 +115,7 @@ function handleSelectLink(item: NavItem) {
 
     <div class="flex-1 bg-background">
       <main class="container">
-        <slot></slot>
+        <router-view></router-view>
       </main>
     </div>
 

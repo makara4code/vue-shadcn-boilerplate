@@ -1,39 +1,37 @@
 export interface NavItem {
-    title: string;
-    href?: string;
-    disabled?: boolean;
-    external?: boolean;
-    icon?: string;
-    label?: string;
+  title: string;
+  href?: string;
+  disabled?: boolean;
+  external?: boolean;
+  icon?: string;
+  label?: string;
 }
 
 export type SidebarNavItem = NavItem & {
-    items: SidebarNavItem[];
-}
+  items: SidebarNavItem[];
+};
 
 export type NavItemWithChildren = NavItem & {
-    items: NavItemWithChildren[];
-}
+  items: NavItemWithChildren[];
+};
 
 interface NavConfig {
-    mainNav: NavItem[];
-    sidebarNav: SidebarNavItem[];
+  mainNav: NavItem[];
+  sidebarNav: SidebarNavItem[];
 }
 
-export const navConfig:NavConfig = {
-    mainNav: [
-
-    ],
-    sidebarNav: [
+export const navConfig: NavConfig = {
+  mainNav: [],
+  sidebarNav: [
+    {
+      title: 'Getting Started',
+      items: [
         {
-            title: 'Getting Started',
-            items: [
-                {
-                    title: 'Introduction',
-                    href: '/',
-                    items: []
-                }
-            ]
-        }
-    ]
-}
+          title: 'Introduction',
+          href: '/',
+          items: [],
+        },
+      ],
+    },
+  ],
+};

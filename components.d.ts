@@ -22,6 +22,7 @@ declare module 'vue' {
     AlertTitle: typeof import('./src/components/ui/alert/AlertTitle.vue')['default']
     Button: typeof import('./src/components/ui/button/Button.vue')['default']
     CambodiaFlag: typeof import('./src/components/icons/CambodiaFlag.vue')['default']
+    Checkbox: typeof import('./src/components/ui/checkbox/Checkbox.vue')['default']
     Command: typeof import('./src/components/ui/command/Command.vue')['default']
     CommandDialog: typeof import('./src/components/ui/command/CommandDialog.vue')['default']
     CommandEmpty: typeof import('./src/components/ui/command/CommandEmpty.vue')['default']

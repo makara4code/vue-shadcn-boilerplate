@@ -6,15 +6,7 @@ import router from "@/router";
 </script>
 
 <template>
-  <div class="container relative hidden h-[700px] flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-1 lg:px-0" >
-    <Button
-    variant="ghost"
-    @click="router.push('/')"
-      :class="cn(buttonVariants({ variant: 'ghost' }), 'absolute right-4 top-4 md:right-8 md:top-8')"
-    >
-      Back
-    </Button>
-
+  <div class="container relative hidden h-[600px] flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-1 lg:px-0" >
     <div class="lg:p-8">
       <div class="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
         <div class="flex flex-col space-y-2 text-center">

@@ -13,15 +13,15 @@ export const useRequestStore = defineStore({
   },
   actions: {
     startRequest() {
-        const id = nanoid();
-        this.queue = [...this.queue, id];
+      const id = nanoid();
+      this.queue = [...this.queue, id];
 
-        setTimeout(() => this.endRequest(id), 3500);
+      setTimeout(() => this.endRequest(id), 3500);
 
-        return id;
+      return id;
     },
     endRequest(id: string) {
-        this.queue = this.queue.filter((queueID: string) => queueID !== id);
+      this.queue = this.queue.filter((queueID: string) => queueID !== id);
     }
   }
 });
