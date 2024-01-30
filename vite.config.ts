@@ -13,10 +13,10 @@ import pkg from './package.json';
 import Vue from '@vitejs/plugin-vue';
 
 
-const { dependencies, devDependencies, name, version } = pkg;
+const { devDependencies, name, version } = pkg;
 
 const __APP_INFO__ = {
-  pkg: { dependencies, devDependencies, name, version },
+  pkg: { devDependencies, name, version },
   lastBuildTime: dayjs().format('DD-MM-YYYY HH:mm:ss'),
 };
 

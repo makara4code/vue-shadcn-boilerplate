@@ -3,6 +3,8 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 
@@ -16,8 +18,8 @@ const globalStore = useGlobalStore();
 const language = computed(() => globalStore.language ?? 'en');
 
 const languageList = {
-  km: { label: 'ភាសាខ្មែរ', value: 'km', icon: '/cambodia-flag-icon.svg' },
-  en: { label: 'English', value: 'en', icon: '/united-kingdom-flag-icon.svg' },
+  'km-KH': { label: 'ភាសាខ្មែរ', value: 'km-KH', icon: '/cambodia-flag-icon.svg' },
+  'en-US': { label: 'English', value: 'en-US', icon: '/united-kingdom-flag-icon.svg' },
 };
 
 
@@ -31,7 +33,8 @@ const changeLanguage = (lang: string) => {
   <DropdownMenu>
     <DropdownMenuTrigger>
       <Button class="flex items-center justify-center" aria-label="Toggle dark mode" variant="'ghost'" :size="'icon'">
-        <img class="w-[30px] h-[30px]" :src="languageList[language].icon" alt="Vue logo" />
+        <img class="w-[30px] h-[30px]" :src="languageList[language as keyof typeof languageList].icon" alt="Vue logo" />
+        {{}}
       </Button>
     </DropdownMenuTrigger>
     <DropdownMenuContent>

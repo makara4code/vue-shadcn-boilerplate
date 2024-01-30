@@ -1,3 +1,4 @@
+export * from "./Locale"
 
 export const SUCCESS_CODE = 200;
 
