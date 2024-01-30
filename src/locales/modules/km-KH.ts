@@ -1,6 +1,6 @@
 export default {
-    common: {
-        required: 'ត្រូវការ',
-        login: "ចូល",
-    }
-}
+  common: {
+    required: 'ត្រូវការ',
+    login: 'ចូល',
+  },
+};

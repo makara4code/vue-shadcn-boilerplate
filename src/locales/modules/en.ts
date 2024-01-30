@@ -1,6 +1,6 @@
 export default {
-    common: {
-        required: 'This is required',
-        login: "Login",
-    }
-}
+  common: {
+    required: 'This is required',
+    login: 'Login',
+  },
+};

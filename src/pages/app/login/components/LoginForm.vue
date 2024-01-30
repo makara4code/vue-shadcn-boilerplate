@@ -5,7 +5,9 @@ import { useUserStore } from '@/stores/modules';
 
 import LucideSpinner from '~icons/lucide/loader-2';
 import router from '@/router';
+import { useI18n } from 'vue-i18n';
 
+const { t } = useI18n()
 const userStore = useUserStore();
 
 const isLoading = ref();
@@ -51,7 +53,7 @@ const onSubmit = async (event: Event) => {
 
           <Button :disabled="isLoading || notHaveEmailOrPassword" class="mt-4">
             <LucideSpinner v-if="isLoading" class="mr-2 h-4 w-4 animate-spin" />
-            {{ isLoading ? 'Signing In...' : 'Sign In' }}
+            {{ isLoading ? 'Signing In...' : t('common.login') }}
         </Button>
         </div>
       </div>
