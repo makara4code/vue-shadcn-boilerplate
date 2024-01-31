@@ -16,7 +16,7 @@ export const routes: Array<RouteRecordRaw> = [
       {
         path: '/login',
         name: 'login',
-        component: () => import('@/pages/app/login/Login.vue'),
+        component: () => import('@/pages/login/Login.vue'),
         meta: {
           pageTitle: 'Login',
         },
@@ -31,6 +31,11 @@ export const routes: Array<RouteRecordRaw> = [
         path: "dashboard",
         name: "dashboard",
         component: () => import("@/pages/app/Dashboard.vue"),
+      },
+      {
+        path: "about",
+        name: "about",
+        component: () => import("@/pages/app/About.vue")
       }
     ]
   },
