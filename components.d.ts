@@ -8,7 +8,6 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Alert: typeof import('./src/components/ui/alert/Alert.vue')['default']
-    AlertConfirm: typeof import('./src/components/alert/AlertConfirm.vue')['default']
     AlertDescription: typeof import('./src/components/ui/alert/AlertDescription.vue')['default']
     AlertDialog: typeof import('./src/components/ui/alert-dialog/AlertDialog.vue')['default']
     AlertDialogAction: typeof import('./src/components/ui/alert-dialog/AlertDialogAction.vue')['default']
@@ -75,6 +74,5 @@ declare module 'vue' {
     SheetHeader: typeof import('./src/components/ui/sheet/SheetHeader.vue')['default']
     SheetTitle: typeof import('./src/components/ui/sheet/SheetTitle.vue')['default']
     SheetTrigger: typeof import('./src/components/ui/sheet/SheetTrigger.vue')['default']
-    UserAuthForm: typeof import('./src/components/auth/UserAuthForm.vue')['default']
   }
 }

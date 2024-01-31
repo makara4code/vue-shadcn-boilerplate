@@ -24,6 +24,17 @@ export const routes: Array<RouteRecordRaw> = [
     ]
   },
   {
+    path: "/",
+    component: () => import("@/layouts/app-layout/AppLayout.vue"),
+    children: [
+      {
+        path: "dashboard",
+        name: "dashboard",
+        component: () => import("@/pages/app/Dashboard.vue"),
+      }
+    ]
+  },
+  {
     path: '/404',
     name: '404',
     component: () => import('@/pages/404NotFound.vue'),

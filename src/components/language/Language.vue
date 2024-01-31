@@ -3,8 +3,6 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 
@@ -34,7 +32,6 @@ const changeLanguage = (lang: string) => {
     <DropdownMenuTrigger>
       <Button class="flex items-center justify-center" aria-label="Toggle dark mode" variant="'ghost'" :size="'icon'">
         <img class="w-[30px] h-[30px]" :src="languageList[language as keyof typeof languageList].icon" alt="Vue logo" />
-        {{}}
       </Button>
     </DropdownMenuTrigger>
     <DropdownMenuContent>
